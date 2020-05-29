@@ -1,4 +1,4 @@
-# Enterprise Integration Pattern & Apache Camel
+# Enterprise Integration Patterns & Apache Camel
 
 Demonstrations of EIP patterns using Apache Camel. Read about the patterns
 in the (unpublished) blog post.
