@@ -39,8 +39,9 @@ dependencies {
 }
 
 application {
-    println("Select the sample to run:")
     val samples = listOf(listOf("Point-to-Point Channel", "eip.Point2PointKt"))
+
+    println("Select the sample to run (1-${samples.size}):")
 
     for (item in samples.withIndex()) {
         println("${item.index + 1}: ${item.value[0]}")
