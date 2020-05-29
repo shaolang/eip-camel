@@ -39,7 +39,9 @@ dependencies {
 }
 
 application {
-    val samples = listOf(listOf("Point-to-Point Channel", "eip.Point2PointKt"))
+    val samples = listOf(
+        listOf("Point-to-Point Channel", "eip.Point2PointKt"),
+        listOf("Publish-Subscribe Channel", "eip.PublishSubscribeChannelKt"))
 
     println("Select the sample to run (1-${samples.size}):")
 
