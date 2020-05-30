@@ -42,7 +42,8 @@ application {
     val samples = listOf(
         listOf("Point-to-Point Channel", "eip.Point2PointChannelKt"),
         listOf("Publish-Subscribe Channel", "eip.PublishSubscribeChannelKt"),
-        listOf("Wildcard Subscriber", "eip.WildcardSubscriberKt"))
+        listOf("Wildcard Subscriber", "eip.WildcardSubscriberKt"),
+        listOf("Dead Letter Channel", "eip.DeadLetterChannelKt"))
 
     println("Select the sample to run (1-${samples.size}):")
 
