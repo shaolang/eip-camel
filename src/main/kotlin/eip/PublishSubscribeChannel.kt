@@ -46,5 +46,6 @@ fun main() {
     val producer = context.createProducerTemplate()
     producer.sendBody(directURI, "Hello, World!")
 
+    Thread.sleep(100)
     context.stop()
 }

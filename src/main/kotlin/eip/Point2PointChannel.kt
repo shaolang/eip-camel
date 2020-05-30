@@ -38,5 +38,6 @@ fun main() {
         producer.sendBody(directURI, "Hello, World! for the $n-th time")
     }
 
+    Thread.sleep(100)
     context.stop()
 }
