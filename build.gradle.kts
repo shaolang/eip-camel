@@ -30,7 +30,7 @@ dependencies {
 
     for (n in listOf("core-engine", "core-languages", "bean", "direct",
                      "stream", "activemq")) {
-        implementation("org.apache.camel:camel-$n:3.3.0")
+        implementation("org.apache.camel:camel-$n:3.4.0")
     }
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
