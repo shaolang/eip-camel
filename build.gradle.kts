@@ -27,9 +27,10 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.apache.logging.log4j:log4j-slf4j18-impl:2.13.3")
+    implementation("org.xerial:sqlite-jdbc:3.32.3.1")
 
     for (n in listOf("core-engine", "core-languages", "bean", "direct",
-                     "stream", "activemq")) {
+                     "stream", "activemq", "jdbc")) {
         implementation("org.apache.camel:camel-$n:3.4.0")
     }
 
@@ -43,7 +44,8 @@ application {
         listOf("Point-to-Point Channel", "eip.Point2PointChannelKt"),
         listOf("Publish-Subscribe Channel", "eip.PublishSubscribeChannelKt"),
         listOf("Wildcard Subscriber", "eip.WildcardSubscriberKt"),
-        listOf("Dead Letter Channel", "eip.DeadLetterChannelKt"))
+        listOf("Dead Letter Channel", "eip.DeadLetterChannelKt"),
+        listOf("Channel Adapter JDBC", "eip.ChannelAdapterJDBCKt"))
 
     println("Select the sample to run (1-${samples.size}):")
 
