@@ -40,24 +40,32 @@ dependencies {
 }
 
 application {
-    val samples = listOf(
-        listOf("Point-to-Point Channel", "eip.Point2PointChannelKt"),
-        listOf("Publish-Subscribe Channel", "eip.PublishSubscribeChannelKt"),
-        listOf("Wildcard Subscriber", "eip.WildcardSubscriberKt"),
-        listOf("Dead Letter Channel", "eip.DeadLetterChannelKt"),
-        listOf("Channel Adapter JDBC", "eip.ChannelAdapterJDBCKt"))
+    mainClassName = "eip.ChannelAdapterJDBCKt"
+}
 
-    println("Select the sample to run (1-${samples.size}):")
+tasks.register("runSample") {
+    dependsOn("run")
 
-    for (item in samples.withIndex()) {
-        println("${item.index + 1}: ${item.value[0]}")
-    }
+    application {
+        val samples = listOf(
+            listOf("Point-to-Point Channel", "eip.Point2PointChannelKt"),
+            listOf("Publish-Subscribe Channel", "eip.PublishSubscribeChannelKt"),
+            listOf("Wildcard Subscriber", "eip.WildcardSubscriberKt"),
+            listOf("Dead Letter Channel", "eip.DeadLetterChannelKt"),
+            listOf("Channel Adapter JDBC", "eip.ChannelAdapterJDBCKt"))
 
-    val selected = readLine()?.trim()?.toIntOrNull()
-    if (selected is Int && selected <= samples.size && selected > 0) {
-        println("Running ${selected}:  ${samples[selected - 1][0]}")
-        mainClassName = samples[selected - 1][1]
-    } else {
-        println("Invalid selection: ${selected}")
+        println("Select the sample to run (1-${samples.size}):")
+
+        for (item in samples.withIndex()) {
+            println("${item.index + 1}: ${item.value[0]}")
+        }
+
+        val selected = readLine()?.trim()?.toIntOrNull()
+        if (selected is Int && selected <= samples.size && selected > 0) {
+            println("Running ${selected}:  ${samples[selected - 1][0]}")
+            mainClassName = samples[selected - 1][1]
+        } else {
+            println("Invalid selection: ${selected}")
+        }
     }
 }
